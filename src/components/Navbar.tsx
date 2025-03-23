@@ -10,7 +10,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-[#f4ede4] shadow-md">
+    <nav className="bg-[#f4ede4] relative">
       <div className="flex justify-between items-center px-6 md:px-10 py-4">
         {/* Left - Logo & Menu */}
         <div className="flex items-center gap-6">
@@ -60,8 +60,20 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Dropdown Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute top-16 left-0 w-full p-4 flex flex-col gap-4">
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-50 z-50 transition-transform transform ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        } md:hidden`}
+      >
+        <div className="w-[80%] bg-white h-full p-6 flex flex-col gap-4">
+          {/* Close Button */}
+          <button
+            className="text-gray-700 self-end"
+            onClick={() => setMenuOpen(false)}
+          >
+            <X className="w-6 h-6" />
+          </button>
+
           <Link href="#" className="hover:text-black flex items-center gap-1">
             Product <ChevronDown className="w-4 h-4" />
           </Link>
@@ -89,7 +101,15 @@ export default function Navbar() {
             </Button>
           </div>
         </div>
-      )}
+      </div>
+
+      <div className="w-[90%] max-w-4xl mx-auto bg-blue-600 text-white text-center py-3 px-6 text-sm md:text-base rounded-lg mt-4">
+        Slack is your digital HQ. Meet the new features keeping teams connected
+        in a work-from-anywhere world.{" "}
+        <a href="#" className="underline font-medium hover:text-yellow-300">
+          Let's go →
+        </a>
+      </div>
     </nav>
   );
 }

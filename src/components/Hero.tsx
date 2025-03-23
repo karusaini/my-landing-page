@@ -14,12 +14,12 @@ export default function HeroSection() {
           you need to get stuff done.
         </p>
         <div className="mt-6 flex flex-col md:flex-row gap-4">
-          <Button className="bg-purple-600 text-white px-6 py-3">
+          <Button className="bg-purple-600 text-white px-6 py-3 cursor-pointer">
             Try for Free
           </Button>
           <Button
             variant="outline"
-            className="border-gray-700 text-gray-700 px-6 py-3 flex items-center gap-2"
+            className="border-gray-700 text-gray-700 px-6 py-3 flex items-center gap-2 cursor-pointer"
           >
             <Image src="/google-icon.png" alt="Google" width={30} height={20} />
             Sign Up with Google

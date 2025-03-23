@@ -1,4 +1,3 @@
-import AnnouncementBanner from "@/components/AnnouncementBanner";
 import BrandsSection from "@/components/BrandsSection";
 import FutureSection from "@/components/FutureSection";
 import HeroSection from "@/components/Hero";
@@ -8,7 +7,6 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <AnnouncementBanner />
 
       <HeroSection />
       <BrandsSection />
